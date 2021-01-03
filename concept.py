@@ -75,7 +75,7 @@ def main():
     for i in range(200):
             program.random()
 
- while True:
+    while True:
         df = fpsclock.tick()/1000
         
         screen.fill((0,0,0)) #color
