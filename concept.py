@@ -62,4 +62,15 @@ class SlidePuzzle:
             x , y = self.tilepos_x[self.tiles[i][0]] ,self.tilepos_y[self.tiles[i][1]]
             screen.blit(self.images[i] , (x,y))
             
-            
+def main():
+    os.environ['SDL_VIDEO_CENTERED'] = '1'
+    pygame.init()
+    pygame.display.set_caption('Slide Game')
+    size = 6
+    padding = 5
+    square_sz = 100
+    screen = pygame.display.set_mode((size*square_sz+(padding*(size + 1)), size*square_sz+(padding*(size + 1)))) #screen size
+    fpsclock = pygame.time.Clock()
+    program  = SlidePuzzle((size,size) , square_sz , padding)
+    for i in range(200):
+            program.random()
