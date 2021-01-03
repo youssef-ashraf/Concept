@@ -22,7 +22,7 @@ class SlidePuzzle:
         pic = pygame.transform.smoothscale(pygame.image.load('imag.jpg'),self.rect.size)
         
         
-                self.images = []
+        self.images = []
         for i in range(self.tiles_len):   
             x1 , y1 = self.tilepos_x[self.tiles[i][0]] ,self.tilepos_y[self.tiles[i][1]]
             image = pic.subsurface(x1 , y1 , ts ,ts) 
@@ -31,7 +31,7 @@ class SlidePuzzle:
             image.blit(text , ((ts-x2)/2,(ts-y2)/2))
             self.images.append(image)
             
-     def getBlank(self):  return self.tiles[-1]      
+    def getBlank(self):  return self.tiles[-1]      
     def setBlank(self,pos): self.tiles[-1] = pos 
     opentile = property(getBlank,setBlank)
     
