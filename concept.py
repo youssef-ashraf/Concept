@@ -40,8 +40,8 @@ class SlidePuzzle:
     def adjacent(self): x,y = self.opentile ; return (x-1 , y) ,(x+1 , y) ,(x, y-1),(x , y+1)
 
 
-     def random(self):
-            adj = self.adjacent()
+    def random(self):
+        adj = self.adjacent()
         self.switch(random.choice([pos for pos in adj if self.in_grid(pos) and pos != self.prev]))
     
     def update(self , df):
