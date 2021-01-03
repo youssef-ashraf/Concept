@@ -74,3 +74,18 @@ def main():
     program  = SlidePuzzle((size,size) , square_sz , padding)
     for i in range(200):
             program.random()
+
+ while True:
+        df = fpsclock.tick()/1000
+        
+        screen.fill((0,0,0)) #color
+        program.draw(screen)
+        pygame.display.flip()
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.display.quit() ; pygame.quit; sys.exit()
+        program.update(df)
+
+
+main()           
