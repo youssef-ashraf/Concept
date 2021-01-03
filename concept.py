@@ -38,3 +38,28 @@ class SlidePuzzle:
     def switch(self,tile):self.tiles[self.tiles.index(tile)] , self.opentile , self.prev = self.opentile , tile , self.opentile
     def in_grid(self,tile): return tile[0]>=0 and tile[0]<self.gs[0] and tile[1]>=0 and tile[1]<self.gs[1]
     def adjacent(self): x,y = self.opentile ; return (x-1 , y) ,(x+1 , y) ,(x, y-1),(x , y+1)
+
+
+     def random(self):
+            adj = self.adjacent()
+        self.switch(random.choice([pos for pos in adj if self.in_grid(pos) and pos != self.prev]))
+    
+    def update(self , df):
+        s = self.speed * df
+        mouse = pygame.mouse.get_pressed()
+        mpos = pygame.mouse.get_pos()
+        
+        if mouse[0]:  
+            x,y = mpos[0]%(self.ts+self.ms),mpos[1]%(self.ts+self.ms)
+            if x>self.ms and y>self.ms:
+                tile = mpos[0]//self.ts , mpos[1]//self.ts #tile
+                
+                if self.in_grid(tile) and (tile in self.adjacent()):self.switch(tile)
+        
+    
+    def draw(self , screen):
+        for i in range(self.tiles_len):
+            x , y = self.tilepos_x[self.tiles[i][0]] ,self.tilepos_y[self.tiles[i][1]]
+            screen.blit(self.images[i] , (x,y))
+            
+            
