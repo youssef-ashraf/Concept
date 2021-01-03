@@ -30,3 +30,11 @@ class SlidePuzzle:
             x2 , y2 = text.get_size()
             image.blit(text , ((ts-x2)/2,(ts-y2)/2))
             self.images.append(image)
+            
+     def getBlank(self):  return self.tiles[-1]      
+    def setBlank(self,pos): self.tiles[-1] = pos 
+    opentile = property(getBlank,setBlank)
+    
+    def switch(self,tile):self.tiles[self.tiles.index(tile)] , self.opentile , self.prev = self.opentile , tile , self.opentile
+    def in_grid(self,tile): return tile[0]>=0 and tile[0]<self.gs[0] and tile[1]>=0 and tile[1]<self.gs[1]
+    def adjacent(self): x,y = self.opentile ; return (x-1 , y) ,(x+1 , y) ,(x, y-1),(x , y+1)
