@@ -1,0 +1,13 @@
+1-Idea title: 
+	Slide Puzzle Game
+
+2-Team Members:
+	يوسف اشرف فوزى بانوب	Youssef Ashraf Fawzy Banoub	20170650
+	نور ماهر سعدان عبد النور	Nour Maher Saadan Abdel Nour	20170602
+	مارتينا صموئيل اديب جرجس	Martina Samwel Adib Girges	20170394
+	مارينا عاطف عبده توفيق		Marina Atef Abdo Tawfiq		20170395
+	مريم ماجد شاكر لوندى		Mariam Maged Shaker Lawndy	20170518
+	مريم يوسف وليم فهيم		Mariam Youssef William Fahim	20170526
+
+3-registration sheet, row number:
+	62
